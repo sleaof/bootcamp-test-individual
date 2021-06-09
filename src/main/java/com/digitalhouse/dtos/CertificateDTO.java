@@ -1,5 +1,8 @@
 package com.digitalhouse.dtos;
 
+import org.springframework.validation.annotation.Validated;
+
+
 public class CertificateDTO extends StudentDTO {
     private String message;
     private Double average;
