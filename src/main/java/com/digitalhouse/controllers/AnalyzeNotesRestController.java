@@ -3,6 +3,8 @@ package com.digitalhouse.controllers;
 import com.digitalhouse.dtos.CertificateDTO;
 import com.digitalhouse.dtos.StudentDTO;
 import com.digitalhouse.services.CertificateService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,7 +20,7 @@ public class AnalyzeNotesRestController {
     }
 
     @PostMapping("/analyzeNotes")
-    public CertificateDTO analyzeNotes(@RequestBody @Valid StudentDTO notes){
-        return certificateService.analyzeNotes(notes);
+    public ResponseEntity<CertificateDTO> analyzeNotes(@RequestBody @Valid StudentDTO notes){
+        return new ResponseEntity(certificateService.analyzeNotes(notes), HttpStatus.CREATED);
     }
 }
