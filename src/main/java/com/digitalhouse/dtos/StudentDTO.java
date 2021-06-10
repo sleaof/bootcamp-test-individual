@@ -16,9 +16,15 @@ public class StudentDTO {
     @Pattern(regexp="^[a-z ]*$", message = "Invalid name")
     private String name;
 
+    @Valid
     private List<SubjectDTO> subjects;
 
     public StudentDTO() {
+    }
+
+    public StudentDTO(String name, List<SubjectDTO> subjects) {
+        this.name = name;
+        this.subjects = subjects;
     }
 
     public String getName() {

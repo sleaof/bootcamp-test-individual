@@ -1,11 +1,20 @@
 package com.digitalhouse.dtos;
 
+import java.util.List;
+
 public class CertificateDTO extends StudentDTO {
     private String message;
     private Double average;
     private StudentDTO student;
 
     public CertificateDTO() {
+    }
+
+    public CertificateDTO(String name, List<SubjectDTO> subjects, String message, Double average, StudentDTO student) {
+        super(name, subjects);
+        this.message = message;
+        this.average = average;
+        this.student = student;
     }
 
     public CertificateDTO(StudentDTO student) {

@@ -19,6 +19,11 @@ public class SubjectDTO {
             = "Note must be between 1 and 2 characters")
     private Integer note;
 
+    public SubjectDTO(String subject, Integer note) {
+        this.subject = subject;
+        this.note = note;
+    }
+
     public String getSubject() {
         return subject;
     }
